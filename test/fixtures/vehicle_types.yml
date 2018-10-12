@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicleType: 
+  vehicleSize: 
+  driveType: 
+  transmissionType: 
+  fuelType: 
+
+two:
+  vehicleType: 
+  vehicleSize: 
+  driveType: 
+  transmissionType: 
+  fuelType: 

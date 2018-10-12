@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelName: 
+  vehicleType: one
+  manufacturer: one
+  carOptions: 
+  numberOfDoors: 
+  engineSize: 
+
+two:
+  modelName: 
+  vehicleType: two
+  manufacturer: two
+  carOptions: 
+  numberOfDoors: 
+  engineSize: 
