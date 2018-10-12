@@ -5,7 +5,7 @@ class Model < ApplicationRecord
   has_one :manufacturer
   has_many :vehicleType
 
-  validates :modelName, vehicleType, manufacturer, presence: true
+  validates :modelName, :vehicleType, :manufacturer, presence: true
   validates :modelName, uniqueness: true
-  validates :engineSize, :numberOfDoors :numericality: {only_integer: true}
+  validates :engineSize, :numberOfDoors, numericality: {only_integer: true}
 end

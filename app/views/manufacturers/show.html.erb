@@ -1,2 +1,24 @@
-<h1>Manufacturers#show</h1>
-<p>Find me in app/views/manufacturers/show.html.erb</p>
+<h1>Manufacturer show page</h1>
+
+
+<h2>Manufacturer Name</h2>
+<ol>
+    <li>
+        Name: <%= @manufacturer.manufacturerName %>
+    </li>
+    <li>
+        Address: <%= @manufacturer.headOffice %>
+    </li>
+    <li>
+        Date Established: <%= @manufacturer.dateFounded %>
+    </li>
+</ol>
+
+<h2>Models Available</h2>
+<ul>
+    <% @models.each do |model| %>
+        <li>
+            <%= model.modelName %>
+        </li>
+    <% end %>
+</ul>

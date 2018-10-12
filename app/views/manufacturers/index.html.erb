@@ -1,2 +1,12 @@
-<h1>Manufacturers#index</h1>
-<p>Find me in app/views/manufacturers/index.html.erb</p>
+<h1>Manufacturers</h1>
+
+<h2>All Manufacturers</h2>
+<ul>
+    <% @manufacturers.each do |make| %>
+        <li>
+            Veiw the 
+            <%= link_to make.manufacturerName, make %>
+            page.
+        </li>
+    <% end %>
+</ul>
