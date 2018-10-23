@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'locations/view'
   get 'about/show'
   get 'vehicle_types/show'
   get 'models/show'

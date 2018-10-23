@@ -4,6 +4,7 @@ class CreateManufacturers < ActiveRecord::Migration[5.2]
       t.string :manufacturerName
       t.string :headOffice
       t.date :dateFounded
+      t.references :location, foreign_key: true
 
       t.timestamps
     end
