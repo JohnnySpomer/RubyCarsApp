@@ -14,20 +14,26 @@ Model.destroy_all
 
 # create the model
 20.times do 
-    manufacturerName = Faker::Vehicle.manufacture
-    engineSizeInt = Faker::Vehicle.engine_size
-    modelName = Faker::Vehicle.model
-    vehicleType = Faker::Vehicle.car_type
-    city = Faker::Address.city
+    manufacturerName = Faker::Vehicle.manufacture.to_s
+    engineSizeInt = Faker::Vehicle.engine_size.to_i
+    modelName = Faker::Vehicle.model.to_s
+    city = Faker::Address.city.to_s
+
+    location = Location.create(
+        city: city,
+        street: Faker::Address.street_address,
+        postalCode: Faker::Address.postcode
+    )
 
     manufacturer = Manufacturer.create(
         manufacturerName: manufacturerName,
         headOffice: Faker::Address.full_address,
-        dateFounded: Faker::Time.backward(14600)
+        dateFounded: Faker::Time.backward(14600),
+        location: location
     )
 
-    vehicleType = VehicleType.create(
-        vehicleType: vehicleType,
+    vehicleType1 = VehicleType.create(
+        vehicleType: Faker::Vehicle.car_type,
         driveType: Faker::Vehicle.drive_type,
         transmissionType: Faker::Vehicle.transmission,
         fuelType: Faker::Vehicle.fuel_type
@@ -37,14 +43,8 @@ Model.destroy_all
         modelName: modelName,
         carOptions: Faker::Vehicle.car_options,
         numberOfDoors: Faker::Vehicle.doors,
-        engineSize: engineSizeInt.to_i,
-        manufacturer: manufacturerName,
-        vehicleType: vehicleType
-    )
-
-    manufacturer.locations.create(
-        city: city
-        street: Faker::Address.street_address,
-        postalCode: Faker::Address.postcode
+        engineSize: engineSizeInt,
+        manufacturer: manufacturer,
+        vehicle_type: vehicleType1
     )
 end

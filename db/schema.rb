@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_153803) do
+ActiveRecord::Schema.define(version: 2018_10_25_174928) do
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 2018_10_23_153803) do
     t.string "manufacturerName"
     t.string "headOffice"
     t.date "dateFounded"
+    t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_manufacturers_on_location_id"
   end
 
   create_table "models", force: :cascade do |t|
     t.string "modelName"
-    t.integer "vehicleType_id"
+    t.integer "vehicle_type_id"
     t.integer "manufacturer_id"
     t.string "carOptions"
     t.integer "numberOfDoors"
@@ -38,12 +40,11 @@ ActiveRecord::Schema.define(version: 2018_10_23_153803) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manufacturer_id"], name: "index_models_on_manufacturer_id"
-    t.index ["vehicleType_id"], name: "index_models_on_vehicleType_id"
+    t.index ["vehicle_type_id"], name: "index_models_on_vehicle_type_id"
   end
 
   create_table "vehicle_types", force: :cascade do |t|
     t.string "vehicleType"
-    t.string "vehicleSize"
     t.string "driveType"
     t.string "transmissionType"
     t.string "fuelType"

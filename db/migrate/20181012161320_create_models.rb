@@ -2,7 +2,7 @@ class CreateModels < ActiveRecord::Migration[5.2]
   def change
     create_table :models do |t|
       t.string :modelName
-      t.references :vehicleType, foreign_key: true
+      t.references :vehicle_type, foreign_key: true
       t.references :manufacturer, foreign_key: true
       t.string :carOptions
       t.integer :numberOfDoors
