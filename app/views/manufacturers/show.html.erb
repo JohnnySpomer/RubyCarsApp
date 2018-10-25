@@ -18,7 +18,7 @@
 <ul>
     <% @models.each do |model| %>
         <li>
-            <%= model.modelName %>
+            <%= link_to model.modelName, model %>
         </li>
     <% end %>
 </ul>

@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <header>
+      <p>
+        <%= link_to 'Home', manufacturers_path %>,
+        <%= link_to 'About Us', about_show_path %>,
+        <%= link_to 'Search', search_index_path %>
+      </p>
+    </header>
     <%= yield %>
   </body>
 </html>
