@@ -1,0 +1,11 @@
+<h2>Manufacturers found: <%= @manufacturers.size %></h2>
+
+<% if @manufacturers.empty? %>
+    <p>No Manufacturers found.</p>
+<%else%>
+    <ul>
+        <% @manufacturers.each do |manufac| %>
+            <li><%= link_to manufac.manufacturerName, manufac %></li>
+        <% end %>
+    </ul>
+<% end %>

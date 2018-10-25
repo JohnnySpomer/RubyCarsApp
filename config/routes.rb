@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :search, only: [:index] do
+    collection do 
+      get 'results'
+    end
+  end
+
   get 'locations/view'
   get 'about/show'
   get 'vehicle_types/show'
